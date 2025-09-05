@@ -22,9 +22,5 @@ D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\bin\
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\bin\Release\DB.dll
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\bin\Release\DB.pdb
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.sqlproj.AssemblyReference.cache
-D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\Model.xml
-D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\refactor.xml
-D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\postdeploy.sql
-D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\predeploy.sql
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.dll
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.pdb
