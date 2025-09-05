@@ -1,0 +1,5 @@
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere\DB\DB\DB\bin\Debug\DB.dacpac
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere\DB\DB\DB\bin\Debug\DB.dll
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere\DB\DB\DB\bin\Debug\DB.pdb
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere\DB\DB\DB\obj\Debug\DB.dll
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere\DB\DB\DB\obj\Debug\DB.pdb
