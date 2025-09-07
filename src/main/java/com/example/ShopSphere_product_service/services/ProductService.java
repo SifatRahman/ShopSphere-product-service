@@ -1,12 +1,15 @@
 package com.example.ShopSphere_product_service.services;
 
+import com.example.ShopSphere_product_service.RabbitMq.RabbitMQService;
 import com.example.ShopSphere_product_service.dtos.CreateProductDTO;
+import com.example.ShopSphere_product_service.dtos.EventDTOs.ProductCreatedEventDTO;
 import com.example.ShopSphere_product_service.dtos.ProductResponseDTO;
 import com.example.ShopSphere_product_service.dtos.SearchProductDTO;
 import com.example.ShopSphere_product_service.dtos.UpdateProductDTO;
 import com.example.ShopSphere_product_service.entities.Product;
 import com.example.ShopSphere_product_service.repository.ProductRepository;
 import com.example.ShopSphere_product_service.utils.ConstantUtils;
+import com.example.ShopSphere_product_service.utils.enums.EventName;
 import com.example.ShopSphere_product_service.utils.exceptions.RequiredResourceNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +18,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductService extends BaseService {
     private final ProductRepository productRepository;
+    private final RabbitMQService rabbitMQService;
 
     public List<ProductResponseDTO> getProducts() {
         try {
@@ -97,9 +99,28 @@ public class ProductService extends BaseService {
             product.setCreatedAt(LocalDateTime.now());
 
             productRepository.save(product);
+            ProductCreatedEventDTO eventDTO = getProductCreatedEventDTO(product);
+            //Sent to Creation to MQ
+            rabbitMQService.sendMessageToMQ(EventName.product_created.toString(),eventDTO);
         } catch (Exception e) {
             processException(e);
         }
+    }
+
+    public ProductCreatedEventDTO getProductCreatedEventDTO(Product product){
+        return ProductCreatedEventDTO.builder()
+                .product_id(product.getId())
+                .name(product.getName())
+                .description(product.getDescription())
+                .price(product.getPrice())
+                .image_url(product.getImageUrl())
+                .discount_price(product.getDiscountPrice())
+                .stock_quantity(product.getStockQuantity())
+                .category_id(product.getCategoryId())
+                .brand_id(product.getBrandId())
+                .status(product.getStatus())
+                .created_at(product.getCreatedAt())
+                .build();
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -107,6 +128,8 @@ public class ProductService extends BaseService {
         try {
             Product Product = productRepository.findById(productId).orElseThrow(() -> new RequiredResourceNotFoundException("Product not found"));
             productRepository.delete(Product);
+            //Sent to Creation to MQ
+            rabbitMQService.sendMessageToMQ(EventName.product_deleted.toString(),productId);
         } catch (Exception e) {
             processException(e);
         }
@@ -128,6 +151,8 @@ public class ProductService extends BaseService {
             product.setUpdatedAt(LocalDateTime.now());
 
             productRepository.save(product);
+            //Sent to Creation to MQ
+            rabbitMQService.sendMessageToMQ(EventName.product_updated.toString(),dto);
         } catch (Exception e) {
             processException(e);
         }

@@ -15,7 +15,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("ShopSphere Documentation")
+                        .title("ShopSphere PRODUCT-SERVICE Documentation")
                         .version("1.0")
                         .description("API documentation for ShopSphere")
                         .contact(new Contact()

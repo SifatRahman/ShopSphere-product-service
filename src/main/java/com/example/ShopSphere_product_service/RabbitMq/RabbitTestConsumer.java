@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class RabbitTestConsumer {
 
 
-    @RabbitListener(queues = "${rabbitMQ.queue.shopsphere}")
+//    @RabbitListener(queues = "${rabbitMQ.product-queue.shopsphere}")
     @SneakyThrows
     public <T> void receiveMessage(String message) {
         ProductResponseDTO productResponseDTO = new ObjectMapper().

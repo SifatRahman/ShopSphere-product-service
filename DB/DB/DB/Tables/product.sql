@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[product] (
     id NVARCHAR(128) NOT NULL PRIMARY KEY,
     name NVARCHAR(255) NOT NULL,
-    description NVARCHAR(255) NULL,
+    description NVARCHAR(MAX) NULL,
     price DECIMAL(18,4) NOT NULL,
     image_url NVARCHAR(255) NOT NULL,
     discount_price DECIMAL(18,4) NULL,

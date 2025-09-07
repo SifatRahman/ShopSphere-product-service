@@ -24,3 +24,13 @@ D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\bin\
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.sqlproj.AssemblyReference.cache
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.dll
 D:\Personal projects\ShopSphere-Backend\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.pdb
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\bin\Release\DB.dacpac
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\bin\Release\DB.dll
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\bin\Release\DB.pdb
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.sqlproj.AssemblyReference.cache
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\Model.xml
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\refactor.xml
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\postdeploy.sql
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\predeploy.sql
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.dll
+G:\Personal Projects\ShopSphere\BACKEND\ShopSphere-product-service\DB\DB\DB\obj\Release\DB.pdb

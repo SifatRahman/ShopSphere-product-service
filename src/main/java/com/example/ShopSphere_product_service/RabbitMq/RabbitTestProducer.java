@@ -17,24 +17,19 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class RabbitTestProducer {
     private final RabbitTemplate rabbitTemplate;
-    @Value("${rabbitMQ.routingKey.shopsphere}")
+    @Value("${rabbitMQ.product-routingKey.shopsphere}")
     public String routingKeyShopsphere;
-    @Value("${rabbitMQ.exchange.shopsphere}")
+    @Value("${rabbitMQ.product-exchange.shopsphere}")
     public String exchangeShopsphere;
 
     @SneakyThrows
     public <T> void sendMessage(T payload) {
-
         JSONObject payloadObj = new JSONObject(payload);
         String message = payloadObj.toString();
-
-        rabbitTemplate.convertAndSend(exchangeShopsphere, routingKeyShopsphere, message);
-        System.out.println("Sent to MQ: " + message);
-
-        rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
         rabbitTemplate.convertAndSend(
                 exchangeShopsphere, routingKeyShopsphere, message
         );
+        System.out.println("Sent to MQ: " + message);
     }
 
     public Object sendTestMessageToMQ(){

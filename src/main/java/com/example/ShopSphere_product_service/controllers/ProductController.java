@@ -6,7 +6,6 @@ import com.example.ShopSphere_product_service.RabbitMq.RabbitTestProducer;
 import com.example.ShopSphere_product_service.dtos.*;
 import com.example.ShopSphere_product_service.services.ProductService;
 import com.example.ShopSphere_product_service.utils.enums.Status;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
